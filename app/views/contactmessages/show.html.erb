@@ -1,0 +1,73 @@
+
+
+  <!-- Container / Start -->
+  <div class="container">
+    <div class="row">  
+	  <div class="col-md-12">
+        <div class="utf-contact-map margin-bottom-50">
+          <div class="utf-google-map-container">
+			  
+			
+            <h1> Contact message</h1>  <p id="notice"><%= notice %></p>
+
+
+
+		  </div>
+        </div>
+      </div>	
+      <!-- Contact Details -->
+    
+      <!-- Contact Form -->
+      <div class="col-md-12">
+        <section id="contact">
+		  <div class="utf-boxed-list-headline-item">
+            <h3><i class="fe fe-edit"></i> Contact Form</h3>
+          </div>
+
+       
+		  <div class="utf-contact-form-item">
+                    
+                <p>
+                  <strong>First name:</strong>
+                  <%= @contactmessage.first_name %>
+                </p>
+
+                <p>
+                  <strong>Last name:</strong>
+                  <%= @contactmessage.last_name %>
+                </p>
+
+                <p>
+                  <strong>Email:</strong>
+                  <%= @contactmessage.email %>
+                </p>
+
+                <p>
+                  <strong>Subject:</strong>
+                  <%= @contactmessage.subject %>
+                </p>
+
+                <p>
+                  <strong>Message:</strong>
+                  <%= @contactmessage.message %>
+                </p>
+
+                <p>
+                  <strong>Status:</strong>
+                  <%= @contactmessage.status %>
+                </p>
+
+                <p>
+                <%= link_to 'Edit', edit_contactmessage_path(@contactmessage) %> |
+                <%= link_to 'Back', contactmessages_path %>
+
+                </p>
+		    </div>	  
+        </section>
+      </div>
+      <!-- Contact Form / End -->       
+    </div>
+  </div>
+  <!-- Container / End --> 
+
+

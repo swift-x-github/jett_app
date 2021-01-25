@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class = "container">
+<h1>Agencies</h1>
+<table class = "table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Website</th>
+      <th>Tel</th>
+      <th>Country</th>
+     
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @agencies.each do |agency| %>
+      <tr>
+        <td><%= agency.name %></td>
+        <td><%= agency.description %></td>
+        <td><%= agency.address %></td>
+        <td><%= agency.email %></td>
+        <td><%= agency.website %></td>
+        <td><%= agency.tel %></td>
+        <td><%= agency.country_id %></td>
+       
+        <td><%= link_to 'Show', agency %></td>
+         <% if account_signed_in? %>
+            <td><%= link_to 'Edit', edit_agency_path(agency) %></td>
+            <td><%= link_to 'Destroy', agency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+ <% if account_signed_in? %>
+<%= link_to 'New Agency', new_agency_path %>
+  <% end %>
+</div>

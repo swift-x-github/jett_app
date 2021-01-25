@@ -1,29 +1,152 @@
+
+<div class="container">
+    <div class="row"> 
+      
+      <!-- Property Description -->
+      <div class="col-lg-12 col-md-11">
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @property.name %>
-</p>
+ 
+    
+ 
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+       <%= image_tag(@property.image.url) %>
+    </div>
+  
+</div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @property.price %>
-</p>
 
-<p>
-  <strong>Rooms:</strong>
-  <%= @property.rooms %>
-</p>
 
-<p>
-  <strong>Bathrooms:</strong>
-  <%= @property.bathrooms %>
-</p>
 
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
+
+	    <!-- Titlebar -->
+		  <div id="titlebar-dtl-item" class="property-titlebar margin-bottom-0">
+			  <div class="property-title">
+				<div class="property-pricing"> <%= number_to_currency(@property.price) %> </div>	
+        
+				<h2><%= @property.name %> <span class="property-badge-sale">   <% if @property.prop_deteils_property_type.to_i == 1 %> For Sale <% else %> For Rent <% end %> </span></h2>
+				<span class="utf-listing-address"><i class="icon-material-outline-location-on"></i>  <%= @property.address %> </span> 
+				<ul class="property-main-features">
+				  <li>Rooms<span> <%= @property.rooms %> </span></li>
+				  <li>Baths<span>  <%= @property.bathrooms %>  </span></li>
+				  <li>Garages<span> <%= @property.prop_deteils_garage %> </span></li>					  					 
+				  <li>Sq M<span> <%= @property.prop_deteils_property_size %>  </span></li>
+				</ul>
+       
+			  </div>		  
+		  </div>
+		  
+       <!-- Video -->
+		  <div class="utf-desc-headline-item">
+			<h3><i class="icon-feather-video"></i> Property Video  </h3>
+		  </div>
+          <div class="responsive-iframe">
+            <iframe src=" https://www.youtube.com/embed/<%= YouTubeAddy.extract_video_id( @property.youtube_link ) %>" allowfullscreen="" width="560" height="315"></iframe>
+          </div>
+          
+
+
+          <div class="property-description"> 
+          <!-- Description -->
+            <div class="utf-desc-headline-item">
+            <h3><i class="icon-material-outline-description"></i> Property Description</h3>
+            </div>
+          <div >
+           <%= @property.description %> 
+          </div>
+		  </div>
+          
+          <!-- Details -->
+		  <div class="utf-desc-headline-item">
+			<h3><i class="sl sl-icon-briefcase"></i> Property Details</h3>
+		  </div>
+          <ul class="property-features margin-top-0">
+            <li>Property ID: <span>  <%= @property.property_id  %>   </span></li>
+            <li>Price: <span><%= number_to_currency(@property.price) %> </span></li>
+            <li>Property Size: <span><%= @property.prop_deteils_property_size %>  m <sup>2</sup> </span></li>
+            <li>Year Built: <span><%= @property.prop_deteils_year_built.year %> </span></li>
+            <li>Bedrooms: <span> <%= @property.bedrooms %></span></li>
+            <li>Bathrooms: <span> <%= @property.bathrooms %></span></li>
+            <li>Garage: <span> <%= @property.prop_deteils_garage %> </span></li>
+            <li>Garage Size: <span><%= @property.prop_deteils_garage_size %>  m <sup>2</sup</span></li>
+			<li>Property Type: <span>Apartment</span></li>
+            <li>Property Status: <span><% if @property.prop_deteils_property_type.to_i == 1 %> For Sale <% else %> For Rent <% end %>  </span></li>
+          </ul>
+		  
+		  <!-- Details -->
+		  <div class="utf-desc-headline-item">
+			<h3><i class="icon-material-outline-business"></i> Additional Details</h3>
+		  </div>
+          <ul class="property-features margin-top-0">
+            <li>Deposit: <span>  <%= number_to_currency(@property.add_details_deposit) %>  </span></li>
+            <li>Pool Size: <span> <%= @property.add_details_pool_size %>    m <sup>2</sup </span></li>
+            <li>Additional Rooms: <span>  <%= @property.add_details_additional_rooms %>  </span></li>
+            <li>Last Remodel Year: <span> <%= @property.add_details_last_remodel_year %>  </span></li>
+            <li>Amenities: <span> <%= @property.add_details_amenities %>  </span></li>
+            <li>Equipment: <span> <%= @property.add_details_equipment %>  </span></li>            
+          </ul>
+          
+          <!-- Features -->
+		  <div class="utf-desc-headline-item">
+			<h3><i class="sl sl-icon-briefcase"></i> Property Features</h3>
+		  </div>
+          <ul class="property-features checkboxes margin-top-0">
+          <% if @property.prop_f_air_cond.to_i   == 1   %>  <li>Air conditioner </li>  <% end %>
+          <% if @property.prop_f_barbeque.to_i   == 1   %>  <li>Barbeque </li>  <% end %>
+          <% if @property.prop_f_dryer.to_i      == 1   %>  <li>Dryer </li>  <% end %>
+          <% if @property.prop_f_gym.to_i        == 1   %>  <li>Gym </li>  <% end %>
+          <% if @property.prop_f_laundry.to_i    == 1   %>  <li>Laundry </li>  <% end %>
+          <% if @property.prop_f_lawn.to_i       == 1   %>  <li>Lawn </li>  <% end %>
+          <% if @property.prop_f_microwave.to_i  == 1   %>  <li>Microwave </li>  <% end %>
+          <% if @property.prop_f_outdoor_shower.to_i == 1   %>  <li>Outdoor Shower </li>  <% end %>
+          <% if @property.prop_f_refrigerator.to_i  == 1   %>  <li>Refrigerator</li>  <% end %>
+          <% if @property.prop_f_sauna.to_i         == 1   %>  <li>Sauna </li>  <% end %>
+          <% if @property.prop_f_swimming_pool.to_i == 1   %>  <li>Swimming Pool </li>  <% end %>
+          <% if @property.prop_f_tv_cable.to_i      == 1   %>  <li>TV Cable </li>  <% end %>
+
+          <% if @property.prop_f_washer.to_i        == 1   %>  <li>Washer </li>  <% end %>
+          <% if @property.prop_f_wi_fi.to_i         == 1   %>  <li>WiFi </li>  <% end %>
+          <% if @property.prop_f_window_cover.to_i  == 1   %>  <li>Window Coverings </li>  <% end %>
+
+          </ul>
+          
+          
+          
+         
+          <!-- Location -->
+		  <div class="utf-desc-headline-item">
+			<h3><i class="icon-material-outline-location-on"></i> Property Location</h3>
+		  </div>
+          <div id="propertyMap-container">
+    <iframe src="https://www.google.com/maps?q=[<%= @property.address %>]&output=embed" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen>></iframe>
+
+		  </div>
+          
+      
+ <div class="utf-desc-headline-item">
+			
+		 
+ 
+<% if account_signed_in? %>
+    <%= link_to 'Edit', edit_property_path(@property), class: 'button' %> 
+    <%= link_to 'Back', properties_path, class: 'button' %>
+<% end %>
+ 
+</div>
+	
+          
+         <!-- Social button start  -->   
+<%= render_shareable :url=> 'http://jettestate.com' %>         <!-- Social button finish -->
+
+              
+          
+        </div>
+      </div>
+      <!-- Sidebar / End -->       
+    </div>
+  </div>
+

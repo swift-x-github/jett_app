@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<div class = "container">
+<p>
+  <strong>Name:</strong>
+  <%= @agency.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @agency.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @agency.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @agency.email %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @agency.website %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @agency.tel %>
+</p>
+
+
+
+<% if account_signed_in? %>
+<%= link_to 'Agents list', agents_path %>
+<%= link_to 'Edit', edit_agency_path(@agency) %> 
+<% end %>
+<%= link_to 'Back', agencies_path %>
+</div>

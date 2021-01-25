@@ -1,0 +1,79 @@
+<!-- Sign In Popup -->
+<div id="utf-signin-dialog-block" class="zoom-anim-dialog mfp-hide dialog-with-tabs"> 
+  <div class="utf-signin-form-part">
+    <ul class="utf-popup-tabs-nav-item">
+      <li class="active"><a href="#login">Log In</a> </li>
+      <li><a href="#register">Register</a></li>
+    </ul>
+    <div class="utf-popup-container-part-tabs"> 
+      <!-- Login -->
+      <div class="utf-popup-tab-content-item" id="login" style="display: inline-block;"> 
+        <div class="utf-welcome-text-item">
+          <h3>Welcome Back Sign in to Continue</h3>
+          <span>Don't Have an Account? <a href="#" class="register-tab">Sign Up!</a></span> 
+		</div>
+        <form method="post" id="login-form">
+          <div class="utf-no-border">
+            <input type="text" name="emailaddress" id="emailaddress" placeholder="Email Address" required="">
+          </div>
+          <div class="utf-no-border">
+            <input type="password" name="password" id="password" placeholder="Password" required="">
+          </div>
+		  <div class="checkbox margin-top-0">
+			<input type="checkbox" id="two-step">
+			<label for="two-step"><span class="checkbox-icon"></span> Remember Me</label>
+		  </div>
+          <a href="forgot_password.html" class="forgot-password">Forgot Password?</a>
+        </form>
+        <button class="button full-width utf-button-sliding-icon ripple-effect" type="submit" form="login-form">Log In <i class="icon-feather-chevrons-right"></i></button>
+        <div class="utf-social-login-separator-item"><span>or</span></div>
+        <div class="utf-social-login-buttons-block">
+          <button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i> Facebook</button>
+		  <button class="google-login ripple-effect"><i class="icon-brand-google-plus-g"></i> Google+</button>
+		  <button class="twitter-login ripple-effect"><i class="icon-brand-twitter"></i> Twitter</button>
+        </div>
+      </div>
+      
+      <!-- Register -->
+      <div class="utf-popup-tab-content-item" id="register" style="display: none;"> 
+        <div class="utf-welcome-text-item">
+          <h3>Create your Account!</h3>
+		  <span>Don't Have an Account? <a href="#" class="register-tab">Sign Up!</a></span> 
+        </div>        
+        <form method="post" id="utf-register-account-form">
+          <div class="utf-no-border margin-bottom-20">
+			<select class="utf-chosen-select-single-item utf-with-border" title="Single User" style="display: none;">
+				<option>Single User</option>
+				<option>Agent</option>
+				<option>Multi User</option>				
+			</select><div class="chosen-container chosen-container-single chosen-container-single-nosearch" style="width: 100%;" title="Single User"><a class="chosen-single"><span>Single User</span><div><b></b></div></a><div class="chosen-drop"><div class="chosen-search"><input type="text" autocomplete="off" readonly=""></div><ul class="chosen-results"></ul></div></div>
+		  </div>
+		  <div class="utf-no-border">
+            <input type="text" name="name" id="name" placeholder="User Name" required="">
+          </div>
+		  <div class="utf-no-border">
+            <input type="text" name="emailaddress-register" id="emailaddress-register" placeholder="Email Address" required="">
+          </div>
+		  <div class="utf-no-border">
+            <input type="password" name="password-register" id="password-register" placeholder="Password" required="">
+          </div>
+          <div class="utf-no-border">
+            <input type="password" name="password-repeat-register" id="password-repeat-register" placeholder="Repeat Password" required="">
+          </div>
+		  <div class="checkbox margin-top-0">
+			<input type="checkbox" id="two-step0">
+			<label for="two-step0"><span class="checkbox-icon"></span> By Registering You Confirm That You Accept <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a></label>
+		  </div>
+        </form>
+        <button class="margin-top-10 button full-width utf-button-sliding-icon ripple-effect" type="submit" form="utf-register-account-form">Register <i class="icon-feather-chevrons-right"></i></button>
+        <div class="utf-social-login-separator-item"><span>or</span></div>
+        <div class="utf-social-login-buttons-block">
+          <button class="facebook-login ripple-effect"><i class="icon-brand-facebook-f"></i> Facebook</button>
+		  <button class="google-login ripple-effect"><i class="icon-brand-google-plus-g"></i> Google+</button>
+		  <button class="twitter-login ripple-effect"><i class="icon-brand-twitter"></i> Twitter</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Sign In Popup / End -->

@@ -1,0 +1,48 @@
+
+
+<%= form_with(model: blog,  html: {multipart: true}) do |form| %>
+
+
+                <% if blog.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+
+                    <ul>
+                      <% blog.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+
+
+
+
+          <div class="utf-submit-page-inner-box">
+          <h3>Blog Basic Information</h3>
+          <div class="content with-padding">             
+           
+				  <div class="col-md-12">
+                  <%= form.label :name %>
+                  <%= form.text_field :name %>
+                </div>
+
+                 <div class="col-md-12">
+                  <%= form.label :description %>
+                  <%= form.text_area :description %>
+                </div>
+
+
+
+
+
+                 <div class="col-md-12">
+                 <h3> photo </h3>
+                  <%= image_tag blog.photo.url %>
+                  <%= form.file_field :photo %>
+                </div>
+
+ <div class="actions">
+                  <%= link_to 'Back', properties_path, class: 'btn btn-primary' %>   <%= form.submit  %>
+                </div>
+<% end %>

@@ -1,33 +1,52 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  who_we_are: "who we are "
+  about: "jett estate is a real estate company established and designed for the real estate market of tomorrow.
+          With the virtual tour videos we prepare, we make virtual home presentations to our customers with the most accurate information in a virtual environment at any time of the day.
+          We are always with our customers with the innovative sales strategies and solutions we have developed.
+          We work everyday by combining developing and advancing technology with our innovative marketing strategies."
+  qr_code: "qr code and virtual tour"
+  we_are_doing: "We are doing a lot of work on real estates that we are interested in selling, which distinguishes us from others."
+  we_combine: "We combine the virtual tour videos that we have prepared specifically for real estate with our qr code posters. Buyers passing near the property can access, watch and share all the correct information about the real estate after scanning the code with their phones."
+  
+  sell_your_house: "Sell ​​your house with the jett estate."
+  we_open_doors: "We open the door of your property to the customers at any time of the day with virtual tour videos that we publish digitally and offer the most accurate information."
+
+
+  why_js: "why jett estate?"
+  while_working: "While working with the jett estate, you also work with professional software developers, authorized regional real estate consultants and digital marketing experts.
+  By listening to your needs and goals, we will do the most professional work to deliver your property to potential buyers and we will be with you every step of the way.
+  If you want to sell your real estate, we would like to meet you."
+
+
+  discover_the_true: "discover the true value of your home"
+  you_are_curious: "You are curious about the true value of your home. We use regional and real-time pricing data when preparing our valuation reports provided by our in-house regional experts. Please contact us for free to find out the value of your home."
+
+
+  virt_tour: "Virtual tour with QR code"
+  by_using: "By using today's technology in the most accurate way, we combine it with the real estate sector.
+  With the qr code posters and tarpaulins we have prepared for the sale of your property, we make a virtual tour to the buyers who pass near your home if they scan the code and provide the most accurate information."
+
+  buy: "buy"
+
+  we_are: "We are always with you to tell you what is what is in the home buying process.
+  We provide you real-time information based on geographic data, the relationship of the property to the neighborhoods around it, and living standards.
+  Each of our ads contains images that contain and reflect the prominent points of that region."
+
+  rent: "rent"
+
+  look_for_rent: "I\'m looking for a house for rent (I LOOK FOR RENT)"
+
+  please_login: "Please login to watch our rental houses (LİKE A LOGİN)"
+  
+  i_want_give_to_rent:  "I want to rent my house (I WANT TO GİVE MY HOUSE FOR RENT)"
+
+  we_are_with_you: "We are with you to find the right tenant for your home."
+  we_are_find: "We are with you to find the most suitable tenant according to your request, both long and short term.
+  With the virtual tour videos we prepare, we offer the tenants the opportunity to instantly watch your house in a virtual environment.
+  This is how we choose the most suitable tenant"
+
+
+  i_want_rent: "I want to rent my house for a short term."
+
+  alanya_is: "Alanya is one of the most popular holiday cities in the world and rental prices are quite high during the summer months.
+  If you want to rent your house to tourists in summer, we would like to meet you."

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ilce.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @ilce.description %>
+</p>
+
+<p>
+  <strong>Il:</strong>
+  <%= @ilce.il_id %>
+</p>
+
+<%= link_to 'Edit', edit_ilce_path(@ilce) %> |
+<%= link_to 'Back', ilces_path %>

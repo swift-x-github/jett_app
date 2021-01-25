@@ -1,0 +1,150 @@
+
+ <header id="header-container">
+        <div id="header">
+          <div class="container"> 
+            <div class="left-side"> 
+              <div id="logo"> 
+                <%= link_to root_path do %>
+                <%= image_tag ("/img/logo.png" )%>
+                <% end %>
+              </div>
+              <!-- Mobile Navigation -->
+              <div class="mmenu-trigger">
+                <button class="hamburger hamburger--collapse" type="button"> <span class="hamburger-box">
+                 <span class="hamburger-inner"></span> </span> </button>
+               
+              </div>
+
+
+              <!-- Main Navigation -->
+              <nav id="navigation" class="style-1">
+                <ul id="responsive">
+                 <% if not account_signed_in? %>
+                 
+
+                  <li> <%= link_to 'Search ', new_search_path %> 
+
+                  <li> <%= link_to 'Buy', buy_path %> </a>
+                    <ul>
+                      <li> <%= link_to 'search by place', buy_search_by_place_path %> 
+                        <ul>
+                          <li> <%= link_to 'Oba', buy_search_by_place_oba_path %> </li>
+                          <li><%= link_to 'Kestel', buy_search_by_place_kestel_path %>  </li>
+                          <li><%= link_to 'Tosmur', buy_search_by_place_tosmur_path %> </li>
+                        </ul>
+                     
+                      <li> <%= link_to 'search by type', buy_search_by_type_path %> 
+                        <ul>
+                          <li> <%= link_to 'flats', buy_search_by_type_flats_path %>  </li>
+                          <li><%= link_to 'villas', buy_search_by_type_villas_path %> </li>
+                          <li><%= link_to 'land', buy_search_by_type_land_path %>  </li>
+                        </ul>
+                      </li>
+                                      
+                    </ul>
+                  </li>
+
+
+                
+
+
+
+                  <li>  <%= link_to 'Rent', rent_path %>  
+                    <ul>
+                     
+                      <li> <%= link_to 'search by place', rent_search_by_place_path %> 
+                        <ul>
+                          <li> <%= link_to 'Oba', rent_search_by_place_oba_path %> </li>
+                          <li><%= link_to 'Kestel', rent_search_by_place_kestel_path %>  </li>
+                          <li><%= link_to 'Tosmur', rent_search_by_place_tosmur_path %> </li>
+                        </ul>
+                     
+                        <li> <%= link_to 'search by type', rent_search_by_type_path %> 
+                        <ul>
+                          <li> <%= link_to 'flats', rent_search_by_type_flats_path %>  </li>
+                          <li><%= link_to 'villas', rent_search_by_type_villas_path %> </li>
+                          <li><%= link_to 'land', rent_search_by_type_land_path %>  </li>
+                        </ul>
+                      </li>
+                                   
+                    </ul>
+                  </li>
+
+
+
+                  <li><%= link_to 'About', about_path %>
+                    <ul>
+                      <li><%= link_to 'About us', about_path %></li>
+                        <li><%= link_to 'Services', services_path %>  </li>
+                      <li><%= link_to 'Pricing plan', pricing_plan_path %>      </li>
+
+                    </ul>
+                  </li>
+
+ 
+                  <li><%= link_to 'Contact', new_contactmessage_path %> 
+                    <ul>
+                        <li><%= link_to 'Send a message', new_contactmessage_path %></li>
+                        <li><%= link_to 'Our office', our_office_path %></li>
+                        
+                         <li><%= link_to 'Agencies', agencies_path %></li>
+                          <li><%= link_to 'Agents', agents_path %></li>
+                    
+                    </ul>
+                  </li>
+                  <% end %>
+                    <% if account_signed_in? %>
+                      <li><%= link_to 'My profile', edit_account_registration_path %>
+                        <ul>
+                         
+                         
+                         
+                          <li><%= link_to 'Fix frofile', edit_account_registration_path %></li>
+                          
+                          
+                        </ul>
+                      
+                      <li><%= link_to 'My blog', blogs_path %></li>
+                       <li><%= link_to 'My properties', properties_path %></li>
+                       <li><%= link_to 'Messages', contactmessages_path %></li>
+                       <li><%= link_to 'My Agency', agencies_path %>     </li>
+                       <li><%= link_to 'My Agents', agents_path %> </li>
+                      
+                      </li>
+                      
+                    <% end %>
+
+                </ul>
+                
+              </nav>
+              
+              <div class="clearfix">
+              
+              
+              </div>
+              <!-- Main Navigation / End -->           
+            </div>
+            <!-- Left Side Content / End --> 
+            
+            <!-- Right Side Content / End -->
+            <div class="right-side"> 
+              <div class="header-widget"> 
+                     
+                 <% if account_signed_in? %>
+                <%= link_to 'Log out', destroy_account_session_path, method: :delete,  class: 'log-in-button sign-in'%>
+                <% else %>
+                <%= link_to 'Sign In', new_account_session_path, class: ' log-in-button sign-in' %>
+                <% end %>
+
+                
+                 
+                <%= link_to  ' Create Propery',  new_property_path, class: 'button border' %> 
+               
+              </div> 
+            </div>
+            <!-- Right Side Content / End -->         
+            
+          </div>
+        </div>
+        
+    

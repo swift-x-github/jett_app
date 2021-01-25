@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<div class = "container">
+
+<div class="col-md-12">
+
+
+
+
+<% form_tag properties_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+
+
+
+        <table class="manage-table responsive-table">
+          <tbody>
+          <tr>
+            <th>Property</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+          <!-- Item #1 -->
+        
+          <% @properties.each do |property| %>
+      
+          <tr>
+           
+            <td > 
+                <%= link_to property  do %>
+                      <%= image_tag(property.image.url) %>
+                <% end %>
+
+            
+              <div class="title">
+                
+                <span><%= property.address %> </span>
+                
+			        </div>
+		      	</td>
+            
+            <td class="utf-expire-date"></td>
+            
+            <td class="action">
+
+            <div class="utf-listing-content">
+					<div class="utf-listing-title">
+
+					  <span class="utf-listing-price">$ <%= property.price %>/mo</span>
+
+					  
+            <h4>  <%= link_to  property.name, property  %>  </h4>
+					  <span class="utf-listing-address"><i class="icon-material-outline-location-on"></i> <%= property.address %> </span> 
+					</div>				
+					<ul class="utf-listing-features">
+					  <li><i class="fa fa-bed"></i> Bedrooms<span><%= property.bedrooms %> </span></li>
+					  <li><i class="icon-feather-codepen"></i> Baths<span><%= property.bathrooms %></span></li>
+					  <li><i class="fa fa-car"></i> Garages<span><%= property.prop_deteils_garage %> </span></li>					  					 
+					  <li><i class="icon-line-awesome-arrows"></i> Sq m<span>><%= property.prop_deteils_property_size %> </span></li>					  					 
+					</ul>	
+					<div class="utf-listing-user-info"><i class="icon-line-awesome-user"></i> <%= property.account.first_name %>, <span> <%= property.created_at.to_formatted_s(:long_ordinal)  %> </span></div>	
+				  </div>
+
+			       <%= link_to 'Show', property, class: 'view tooltip left' %> <i class="fe icon-feather-eye"></i> 
+			      
+			      
+            </td>
+
+          </tr>
+     
+        <% end %>
+
+        </tbody>
+        
+        </table>
+        
+  <h2> <%= will_paginate @properties %> </h2>      
+	  </div>
+
+  
+ </div>
+
+

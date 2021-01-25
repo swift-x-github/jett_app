@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @mahale.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @mahale.description %>
+</p>
+
+<p>
+  <strong>Ilce:</strong>
+  <%= @mahale.ilce_id %>
+</p>
+
+<%= link_to 'Edit', edit_mahale_path(@mahale) %> |
+<%= link_to 'Back', mahales_path %>

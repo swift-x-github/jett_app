@@ -24,9 +24,50 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem "font-awesome-rails"
 
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+gem 'paperclip-i18n'
+
+gem 'rspec'
+gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
+gem 'carrierwave', '~> 2.0'
+
+gem 'feathericon-rails', '~> 1.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+
+gem 'simple_form', '~> 5.0', '>= 5.0.3'
+
+gem 'money', '~> 6.13', '>= 6.13.8'
+gem 'jquery-rails'
+gem "wysiwyg-rails"
+
+gem 'youtube_addy'
+
+gem 'google-qr'
+
+gem 'geocoder'
+
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
+gem 'ancestry'
+
+
+gem 'will_paginate', '> 3.0'
+
+gem 'social-share-button'
+gem 'shareable'
+
+gem 'pg_search'
+#gem 'thinking-sphinx', '~> 5.1'
+gem 'http', '~> 4.4', '>= 4.4.1'
+
+gem 'email_validator'  
+gem 'validates_timeliness', '~> 4.1', '>= 4.1.1'
+gem 'validates_phone_number', '~> 2.0', '>= 2.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

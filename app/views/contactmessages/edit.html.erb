@@ -1,0 +1,50 @@
+
+  <!-- Container / Start -->
+  <div class="container">
+    <div class="row">  
+	  <div class="col-md-12">
+        <div class="utf-contact-map margin-bottom-50">
+          <div class="utf-google-map-container">
+			  
+			
+            <h1>Fix Contactmessage</h1>  
+		  </div>
+        </div>
+      </div>	
+      <!-- Contact Details -->
+      <div class="col-md-4">
+        <div class="utf-boxed-list-headline-item">
+            <h3><i class="fe fe-map"></i> Office Address</h3>
+        </div>
+        <!-- Contact Details -->
+        <div class="utf-contact-location-info-aera sidebar-textbox margin-bottom-40">
+          <ul class="contact-details">
+            <li><i class="fe fe-phone"></i> <strong>Phone Number:</strong> <span><%= @tel_firma %></span></li>
+            <li><i class="fe fe-edit"></i> <strong>Email Address:</strong> <span><%= @email_firma %></span></li>
+            <li><i class="fe fe-globe"></i> <strong>Website:</strong> <span><%= @website_firma %></span></li>
+            <li><i class="fe fe-map"></i> <strong>Address:</strong> <span><%= @address_firma %></span></li>            
+          </ul>
+        </div>
+      </div>
+          
+      <!-- Contact Form -->
+      <div class="col-md-8">
+        <section id="contact">
+		  <div class="utf-boxed-list-headline-item">
+            <h3><i class="fe fe-edit"></i> Contact Form</h3>
+          </div>
+
+       
+		  <div class="utf-contact-form-item">
+			 <%= render 'form', contactmessage: @contactmessage %>
+<%= link_to 'Back', contactmessages_path %>
+
+		    </div>	  
+        </section>
+      </div>
+      <!-- Contact Form / End -->       
+    </div>
+  </div>
+  <!-- Container / End --> 
+ 
+

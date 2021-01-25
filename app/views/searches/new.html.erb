@@ -1,0 +1,54 @@
+
+<div class="parallax" data-background="/images/home-parallax-3.jpg" data-color="#36383e" data-color-opacity="0.7" data-img-width="2500" data-img-height="1600" style="background-image: url(&quot;/images/home-parallax-3.jpg&quot;); background-attachment: fixed; background-size: 1910px 1222.4px; background-position: 50% -244.983px;"><div class="parallax-overlay" style="background-color: rgb(54, 56, 62); opacity: 0.7;"></div>
+<div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="search-container"> 
+
+           <h2>Find Your Dream House</h2>
+           			<div class="announce">From as low as $10 per day with limited time offer discounts.</div>
+        
+            <%= form_for @search do |f| %>
+
+            <div class="row with-forms"> 
+            
+			  <!-- Select City -->
+              <div class="col-md-2">
+                 <%= f.label :prop_deteils_property_type_id, "What for do you search?" %>
+                <%= f.collection_select :prop_deteils_property_type_id, PropertyType.all.order(:name), :id, :name, include_blank: true %>
+              </div>
+
+               <div class="col-md-2">
+                 <%= f.label :prop_deteils_property_status_id, "Chose a properties type..." %>
+                <%= f.collection_select :prop_deteils_property_status_id, PropertyStatus.all.order(:name), :id, :name, include_blank: true %>
+               </div>
+
+             <div class="col-md-2">
+             <%= f.label :min_price, "Price from, $ " %>
+                <%= f.text_field :min_price, size: 10 %> 
+                
+             </div>
+             
+             <div class="col-md-2">
+              <%= f.label :min_price, "Price to, $" %>
+             <%= f.text_field :max_price, size: 10 %>
+             </div>
+          </div>
+
+            <div class="row with-forms"> 
+
+               <div class="col-md-6">
+                <%= f.label :keywords, "Put here something ..." %>
+                <%= f.text_field :keywords %>
+               </div>
+               <div class="col-md-6">
+                    <%= f.submit "Search", class: 'button' %>
+               </div>
+              </div> 
+            <% end %>
+
+          </div>
+        </div>
+      </div>        
+</div>
+</div>

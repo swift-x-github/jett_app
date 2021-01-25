@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20210103161917_add_bedrooms.rb

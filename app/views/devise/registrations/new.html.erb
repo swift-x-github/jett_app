@@ -1,29 +1,47 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="my-account">
+          <div class="tabs-container"> 
+            <!-- Register -->
+			  <div class="utf-welcome-text-item">
+				<h3>Create Your New Account!</h3>
+				<span>Don't Have an Account? <%= render "devise/shared/links" %> ></span> 
+			  </div>
+              <%= form_for(resource, as: resource_name, url: registration_path(resource_name) ) do |f| %>
+               <%= render "devise/shared/error_messages", resource: resource %>
+                <div class="form-row form-row-wide">
+                     <%= f.label :email %>
+                     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-text' %>
+                </div>
+			        
+                <div class="form-row form-row-wide">
+                    <% if @minimum_password_length %>
+                      <em>(<%= @minimum_password_length %> characters minimum)</em>
+                      <% end %><br />
+                       <%= f.label :password %>
+                      <%= f.password_field :password, autocomplete: "new-password" %>
+                </div>
+			        	<div class="form-row form-row-wide">
+                    <%= f.label :password_confirmation %>
+                     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input-text' %>
+                </div>
+                <div class="form-row checkbox margin-top-10 margin-bottom-10">
+					<input type="checkbox" id="two-step0">
+					<label for="two-step0"><span class="checkbox-icon"></span> By Registering You Confirm That You Accept
+           <%= link_to 'Terms & Conditions', term_condition_path%> and   <%= link_to 'Privacy Policy', privacy_policy_path%> </label>
+				</div>
+				
+         <%= f.submit "Sign up", class: 'button full-width border margin-top-10' %>
+				<div class="utf-social-login-separator-item"><span>or</span></div>
+				<div class="utf-social-login-buttons-block">
+					<button class="button social-login via-twitter"><i class="icon-brand-facebook-f"></i> Facebook</button>
+					<button class="button social-login via-gplus"><i class="icon-brand-google-plus-g"></i> Google+</button>
+					<button class="button social-login via-facebook"><i class="icon-brand-twitter"></i> Twitter</button>
+				</div>	
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

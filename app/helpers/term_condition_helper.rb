@@ -1,0 +1,2 @@
+module TermConditionHelper
+end

@@ -1,0 +1,2 @@
+class PropertyStatus < ApplicationRecord
+end

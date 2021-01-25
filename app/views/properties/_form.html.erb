@@ -1,42 +1,310 @@
-<%= form_with(model: property, local: true) do |form| %>
-  <% if property.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
 
-      <ul>
-        <% property.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+                          
+              <%= form_with(model: property,  html: {multipart: true}) do |form| %>
+                <% if property.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
+                    <ul>
+                      <% property.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                <% end %>
 
-  <div class="field">
-    <%= form.label :rooms %>
-    <%= form.number_field :rooms %>
-  </div>
 
-  <div class="field">
-    <%= form.label :bathrooms %>
-    <%= form.number_field :bathrooms %>
-  </div>
+          <div class="utf-submit-page-inner-box">
+          <h3>Property Basic Information</h3>
+          <div class="content with-padding">             
+            <div class="col-md-12">
+                <h5><%= form.label :name %> </h5>
+                <div class="form-row form-row-wide">
+                 <%= form.text_field :name %>
+                 </div>
+			  
+		  		  </div>
+				
+				  <div class="col-md-6">
+					<h5><%= form.label :prop_deteils_property_type %> </h5>
+				  <%= form.select :prop_deteils_property_type, [["For Buy","1"], ["For Sale","2"], ["For Rent", "3"]] %>
+				  </div>
+				  
+				  <div class="col-md-6">
+					<h5>  <%= form.label :prop_deteils_property_status %> </h5>
+					<%= form.select :prop_deteils_property_status, [["Apartment","1"], ["House", "2"], ["Commercial", "3"], ["Garage", "4"], ["Land", "5"], ["Lot", "6"] ] %>
+				  </div>
+				  
+				  <div class="col-md-4">
+					<h5><%= form.label :price, "Price" %> </h5>
+					<div class="select-input disabled-first-option">
+					  <i class="data-unit">USD</i>
+             <%= form.number_field :price %>
+					</div>
+				  </div>
+				  
+				  <div class="col-md-4">
+					<h5> <%= form.label :prop_deteils_property_size, "Propery size" %> </h5>
+					<div class="select-input disabled-first-option">
+					  <i class="data-unit">Sq Mt</i>
+            <%= form.number_field :prop_deteils_property_size, in: 0.0..1000000.0, step: 1 %>
+					</div>
+				  </div>
+				  
+				  <div class="col-md-4">
+					<h5><%= form.label :rooms, "Rooms" %> </h5>
+					<%= form.number_field :rooms, in: 0.0..10.0, step: 1 %>
+          
+				  </div>
+			  </div>
+		  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+
+<div class="utf-submit-page-inner-box">
+			  <h3>Property Information</h3>
+			  <div class="content with-padding">             
+				  <div class="col-md-12">
+					<h5><%= form.label :description %></h5>
+				 <%= form.text_area :description, size: "70x5" %>
+				  </div>
+          
+           <div class="col-md-12">
+                  <%= form.label :address, "Full Address for Google map" %>
+                  <%= form.text_field :address %>
+                </div>
+                <div class="col-md-6">
+                  <%= form.label :latitude, "latitude" %>
+                  <%= form.text_field :latitude %>
+                </div>
+ 
+                <div class="col-md-6">
+                  <%= form.label :longitude, "longitude" %>
+                  <%= form.text_field :longitude %>
+                </div>
+ 
+
+ 
+                <div class="col-md-2">
+                  <%= form.label :postal_index, "Postal index" %>
+                  <%= form.text_field :postal_index %>
+                </div>
+                
+                 <div class="col-md-3">
+                  <%= form.label :country_index, "Counrty" %>
+                 	<%= form.select :country_index, [["Turkey","1"] ] %>
+                </div>
+                 <div class="col-md-3">
+                  <%= form.label :il_index, "Il" %>
+                  	<%= form.select :il_index, [["Antalya","1"] ] %>
+                </div>
+
+                 <div class="col-md-3">
+                  <%= form.label :ilce_index, "Ilce" %>
+                  	<%= form.select :ilce_index, [["Alanya","1"] ] %>
+                </div>
+     
+                <div class="col-md-12">
+                  <%= form.label :mahalle_index, "Mahale" %>
+                 	<%= form.select :mahalle_index, [["Avsallar","1"],  ["Kestel","2"], ["Mahmutlar","3"], ["Oba","4"],  ["Tosmur","5"] ] %>
+                </div>
+
+
+                <div class="col-md-12">
+                  <%= form.label :street_name, "Street" %>
+                  <%= form.text_field :street_name %>
+                </div>
+
+
+                <div class="col-md-12">
+                  <%= form.label :house_number_index, "House num " %>
+                  <%= form.text_field :house_number_index %>
+                </div>
+
+
+				  <div class="col-md-4">
+					<h5>	<%= form.label :prop_deteils_year_built, "Year (date) when propery was belt" %></h5>
+			    <%= form.date_field :prop_deteils_year_built %>
+          </div>
+				  
+				  <div class="col-md-4">
+				
+					<h5><%= form.label :bedrooms, "Bed Rooms" %> </h5>
+					<%= form.number_field :bedrooms, in: 0.0..10.0, step: 1 %>
+				  </div>
+				  
+				  <div class="col-md-4">
+				  <h5><%= form.label :rooms, "Bathrooms" %> </h5>
+					<%= form.number_field :bathrooms, in: 0.0..10.0, step: 1 %>
+
+				  </div>
+			
+ <div class="col-md-12">
+              <div class="col-md-3">
+              
+                        <%= form.label :prop_f_air_cond, "Air Conditioning" %>
+                        <%= form.check_box :prop_f_air_cond  %>
+              
+              </div>
+
+             <div class="col-md-3">
+                  <%= form.label :prop_f_barbeque, "Barbeque" %>
+                  <%= form.check_box :prop_f_barbeque %>
+              </div>         
+
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_dryer, "Dryer" %>
+                  <%= form.check_box :prop_f_dryer %>
+               </div>                
+
+                 <div class="col-md-3">
+                  <%= form.label :prop_f_gym, "Gym" %>
+                  <%= form.check_box :prop_f_gym %>
+               </div>
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_laundry, "Landry" %>
+                  <%= form.check_box :prop_f_laundry %>
+                </div>
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_lawn, "Lawn" %>
+                  <%= form.check_box :prop_f_lawn %>
+                </div>
+
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_microwave, "Microwave" %>
+                  <%= form.check_box :prop_f_microwave %>
+                </div>
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_outdoor_shower, "Outdoor Shower" %>
+                  <%= form.check_box :prop_f_outdoor_shower %>
+                </div>
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_refrigerator, "Refrigerator" %>
+                  <%= form.check_box :prop_f_refrigerator %>
+                </div>
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_sauna, "Sauna" %>
+                  <%= form.check_box :prop_f_sauna %>
+                </div>
+
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_swimming_pool, "Swimming pool" %>
+                  <%= form.check_box :prop_f_swimming_pool %>
+                </div>
+
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_tv_cable, "TV Cable" %>
+                  <%= form.check_box :prop_f_tv_cable %>
+                </div>
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_washer, "Washer" %>
+                  <%= form.check_box :prop_f_washer %>
+                </div>
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_wi_fi, "WiFi" %>
+                  <%= form.check_box :prop_f_wi_fi %>
+                </div>
+
+                <div class="col-md-3">
+                  <%= form.label :prop_f_window_cover, "Window Covering" %>
+                  <%= form.check_box :prop_f_window_cover %>
+                </div>
+
+              </div>
+
+			  </div>
+		  </div>
+
+ <div class="utf-submit-page-inner-box">
+          <h3>Property Additional Information</h3>
+          <div class="content with-padding">   
+
+
+                 <div class="col-md-3">
+                  <%= form.label :property_id, "propery ID" %>
+                  <%= form.text_field :property_id %>
+                </div>
+
+                <div class="col-md-9">
+                  <%= form.label :youtube_link %>
+                  <%= form.text_field :youtube_link %>
+                </div>
+               
+                
+      
+		  </div>
+		  </div>
+
+
+                <div class="form-row form-row-wide">
+                  <%= form.label :prop_deteils_garage, "How many garages propery has?" %>
+                  <%= form.number_field :prop_deteils_garage, in: 0.0..10.0, step: 1 %>
+                </div>
+
+                 <div class="form-row form-row-wide">
+                  <%= form.label :prop_deteils_garage_size, "Garages size, sq.meters" %>
+                  <%= form.number_field :prop_deteils_garage_size, in: 0.0..1000.0, step: 1 %>
+                </div>
+
+
+              
+
+                <div class="form-row form-row-wide">
+                  <%= form.label :add_details_deposit, "Deposit, $" %>
+                  <%= form.number_field :add_details_deposit %>
+                </div>
+
+                 <div class="form-row form-row-wide">
+                  <%= form.label :add_details_pool_size, "Pool size, sq.meters " %>
+                  <%= form.number_field :add_details_pool_size, in: 0.0..1000.0, step: 1 %>
+                </div>
+
+                <div class="form-row form-row-wide">
+                  <%= form.label :add_details_additional_rooms, "Additional room (guest bath or etc ...)" %>
+                  <%= form.text_field :add_details_additional_rooms %>
+                </div>
+
+                 <div class="form-row form-row-wide">
+                  <%= form.label :add_details_last_remodel_year, "Last Remodel Year" %>
+                  <%= form.date_field :add_details_last_remodel_year %>
+                </div>
+
+                <div class="form-row form-row-wide">
+                  <%= form.label :add_details_amenities, "Amenities (things that are designed to provide comfort and enjoyment to the guests)" %>
+                  <%= form.text_field :add_details_amenities %>
+                </div>
+
+                 <div class="form-row form-row-wide">
+                  <%= form.label :add_details_equipment, "Equimpent (Grill - Gas, etc)" %>
+                  <%= form.text_field :add_details_equipment %>
+                </div>
+
+    
+
+             
+
+
+                 <div class="col-md-12">
+                 <h3> photo </h3>
+                  <%= image_tag property.image.url %>
+                  <%= form.file_field :image %>
+                </div>
+
+                <div class="actions">
+                  <%= link_to 'Back', properties_path, class: 'btn btn-primary' %>   <%= form.submit  %>
+                </div>
+              <% end %>
+
+               

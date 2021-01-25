@@ -1,0 +1,13 @@
+        <div class="sidebar margin-top-20">
+          <div class="user-smt-account-menu-container">
+            <ul class="user-account-nav-menu">
+              <li> <i class="sl sl-icon-user"> </i> <%= link_to 'My Profile', edit_account_registration_path %>   </li>
+
+              <li> <i class="sl sl-icon-star"></i> <%= link_to 'Bookmark Listing', edit_account_password_path %>  </li>
+              <li> <i class="sl sl-icon-docs"></i> <%= link_to 'My Property',my_listing_path %>  </li>
+              <li> <i class="sl sl-icon-action-redo"></i> <%= link_to 'New Property', new_property_path %>  </li>
+              <li> <i class="sl sl-icon-lock"></i>   <%= link_to 'Change Password', edit_account_password_path %>  </li>
+              <li> <i class="sl sl-icon-power"></i>  <%= link_to 'Log Out',  destroy_account_session_path, method: :delete %>  </li>
+            </ul>            
+          </div>
+        </div>

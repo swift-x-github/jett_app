@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<div class = "container">
+<p>
+  <strong>Shortname:</strong>
+  <%= @agent.shortname %>
+</p>
+
+<p>
+  <strong>Fullname:</strong>
+  <%= @agent.fullname %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @agent.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @agent.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @agent.email %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @agent.website %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @agent.tel %>
+</p>
+
+
+ <% if account_signed_in? %>
+
+    <%= link_to 'Edit', edit_agent_path(@agent) %> 
+ <% end %>
+<%= link_to 'Back', agents_path %>
+</div>

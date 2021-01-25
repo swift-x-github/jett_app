@@ -1,0 +1,18 @@
+
+<%= simple_form_for(@contactmessage) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :subject %>
+    <%= f.input :message %>
+    <%= f.hidden_field :ip_address, value: request.remote_ip %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

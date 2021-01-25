@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mahales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Ilce</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mahales.each do |mahale| %>
+      <tr>
+        <td><%= mahale.name %></td>
+        <td><%= mahale.description %></td>
+        <td><%= mahale.ilce_id %></td>
+        <td><%= link_to 'Show', mahale %></td>
+        <td><%= link_to 'Edit', edit_mahale_path(mahale) %></td>
+        <td><%= link_to 'Destroy', mahale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mahale', new_mahale_path %>

@@ -1,0 +1,48 @@
+<h1>Rent#all</h1>
+<p>Find me in app/views/rent/index.html.erb</p>
+
+<p id="notice"><%= notice %></p>
+
+<div class="col-md-9">
+        <table class="manage-table responsive-table">
+          <tbody>
+          <tr>
+            <th>Property</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+          <!-- Item #1 -->
+          <% @properties.each do |property| %>
+      
+          <tr>
+            
+            <td class="utf-title-container"> <%= image_tag property.image.url %>
+              <div class="title">
+                <h4>  <%= link_to  property.name, property  %>  </h4>
+                <span><%= property.address %> </span>
+                <span class="table-property-price">$ <%= property.price %>/mo</span> 
+			        </div>
+		      	</td>
+            
+            <td class="utf-expire-date"> <%= property.created_at.to_formatted_s(:long_ordinal)  %> </td>
+            
+            <td class="action">
+			       <%= link_to 'Show', property, class: 'view tooltip left' %> <i class="fe icon-feather-eye"></i> 
+			      
+            </td>
+
+          </tr>
+     
+        <% end %>
+        </tbody>
+        
+        </table>
+        <%= link_to 'Add New Property', new_property_path, class: 'utf-centered-button margin-top-30 button' %>
+        
+	  </div>
+
+    
+
+
+
+

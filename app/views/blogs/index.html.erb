@@ -1,0 +1,207 @@
+<p id="notice"><%= notice %></p>
+
+   
+<br>
+
+
+<div class="container" >
+<div class="blog-page">
+      <div class="row"> 
+        <div class="col-md-8"> 
+         <% if account_signed_in? %>
+         <%= link_to 'create a post ', new_blog_path, class: 'button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10' %> 
+             <% end %>
+          <!-- Related Posts -->
+          <div class="utf-inner-blog-section-title">
+			  <h4><i class="icon-brand-bimobject"></i> Related Blog Posts</h4>
+		  </div>
+          <div class="row">
+
+      <% @blogs.each do |blog| %> 
+
+            <div class="col-md-12"> 
+              <div class="blog-post"> 
+                  <a href="blog_detail_right_sidebar.html" class="post-img">   <%= image_tag(blog.photo.url) %>  </a> 
+                  <div class="utf-post-content-area">
+                    <h3><a href="blog_detail_right_sidebar.html"><%= blog.name %></a></h3>
+                    <ul class="utf-blog-item-post-list">
+                    <li>By, <%= blog.account.first_name %> </li>	
+                    <li><%= time_ago_in_words(Time.now - blog.updated_at) %></li>
+                    </ul>
+                    <p><%= blog.description.truncate(200) %>  <%= link_to 'Continue ...', blog %> </p>
+                  </div>
+                    <% if account_signed_in? %>
+                        <%= link_to 'Edit', edit_blog_path(blog), class: 'button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10' %>
+                        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10' %>
+                    <% end %>
+    
+                  </div>              
+            </div>
+          
+          
+    
+      
+    <% end %>
+  
+
+ </div>
+
+  
+          <div class="clearfix"></div>
+          <div class="margin-top-35"></div>
+           
+           
+           <!--will start comments / End -->
+
+           <!--will end comments / End -->
+            <!-- Related Posts / End -->
+        
+        </div>
+        <!-- Content / End --> 
+        
+        <!-- Sidebar --> 
+        <div class="col-md-4">
+          <div class="sidebar"> 
+		    <!-- Widget -->
+            <div class="widget utf-sidebar-widget-item">
+			  <div class="utf-detail-banner-add-section">
+				 <a href="#"><img src="images/banner-add-2.jpg" alt="banner-add-2"></a>
+			  </div>             
+            </div>
+            <!-- Widget / End-->
+			
+			<!-- Widget -->
+            <div class="widget utf-sidebar-widget-item">
+			  <div class="utf-quote-box">
+				<div class="utf-quote-info">
+					<h4>Make a Difference with Your Online Property!</h4>
+					<p>Lorem Ipsum is simply dummy text of printing and type industry.</p>
+					<a href="register.html" class="button utf-ripple-effect-dark utf-button-sliding-icon margin-top-10">Create an Account <i class="icon-feather-chevrons-right"></i></a>
+				</div>
+			  </div>
+            </div>
+            <!-- Widget / End -->
+			
+            <!-- Widget -->
+            <div class="widget utf-sidebar-widget-item">
+			  <div class="utf-boxed-list-headline-item">
+				  <h3>Search Blog</h3>
+			  </div>
+              <div class="utf-search-blog-input">
+                <div class="input">
+                  <input class="search-field" type="text" placeholder="Type and hit enter" value="">
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <!-- Widget / End --> 
+            
+            <!-- Widget -->
+            <div class="widget utf-sidebar-widget-item">
+			  <div class="utf-boxed-list-headline-item">
+				  <h3>Recently Posts</h3>
+			  </div>
+              <ul class="widget-tabs">
+                <!-- Post #1 -->
+                <li>
+                  <div class="widget-content">
+                    <div class="widget-thumb"> <a href="blog-full-width-single-post.html"><img src="images/blog-widget-03.jpg" alt=""></a> </div>
+                    <div class="widget-text">
+                      <h5><a href="blog-full-width-single-post.html">How to Woo a Recruiter and Land Your Dream.</a></h5>
+                      <span>12 Jan, 2020</span> 
+					</div>
+                    <div class="clearfix"></div>
+                  </div>
+                </li>
+                
+                <!-- Post #2 -->
+                <li>
+                  <div class="widget-content">
+                    <div class="widget-thumb"> <a href="blog-full-width-single-post.html"><img src="images/blog-widget-02.jpg" alt=""></a> </div>
+                    <div class="widget-text">
+                      <h5><a href="blog-full-width-single-post.html">Hey Its Time To Get Up And Get Hired.</a></h5>
+                      <span>12 Jan, 2020</span> 
+					</div>
+                    <div class="clearfix"></div>
+                  </div>
+                </li>
+                
+                <!-- Post #3 -->
+                <li>
+                  <div class="widget-content">
+                    <div class="widget-thumb"> <a href="blog-full-width-single-post.html"><img src="images/blog-widget-01.jpg" alt=""></a> </div>
+                    <div class="widget-text">
+                      <h5><a href="blog-full-width-single-post.html">The Best Canadian Merchant Account Providers.</a></h5>
+                      <span>12 Jan, 2020</span> 
+					</div>
+                    <div class="clearfix"></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- Widget / End--> 
+            
+			<!-- Widget -->
+            <div class="widget utf-sidebar-widget-item">
+			  <div class="utf-boxed-list-headline-item">
+				  <h3>Property Categorie</h3>
+				  <div class="utf-sidebar-categorie"> 
+					<ul>
+					  <li><a href="#">Apartment</a><span>10 Property</span></li> 
+					  <li><a href="#">Condo</a><span>14 Property</span></li> 
+					  <li><a href="#">Family House</a><span>18 Property</span></li> 
+					  <li><a href="#">Modern Villa</a><span>12 Property</span></li> 
+					  <li><a href="#">Town House</a><span>10 Property</span></li> 					  
+					</ul>
+				  </div>
+			  </div>              
+            </div>
+            <!-- Widget / End-->
+
+			<!-- Widget -->
+            <div class="widget utf-sidebar-widget-item">
+			  <div class="utf-boxed-list-headline-item">
+				  <h3>Property Tags Cloud</h3>
+				  <div class="task-tags"> 
+					  <a href="#"><span>Apartment</span></a> 
+					  <a href="#"><span>Family House</span></a> 
+					  <a href="#"><span>Modern Villa</span></a> 
+					  <a href="#"><span>Town House</span></a> 	
+					  <a href="#"><span>Condo</span></a> 					  
+				  </div>
+			  </div>              
+            </div>
+            <!-- Widget / End-->
+
+			<!-- Widget -->
+            <div class="widget utf-sidebar-widget-item">
+			  <div class="utf-boxed-list-headline-item">
+				  <h3>Social Sharing</h3>
+			  </div>
+              <ul class="utf-social-icons rounded">
+                <li><a class="facebook" href="#"><i class="icon-facebook"></i></a></li>
+                <li><a class="twitter" href="#"><i class="icon-twitter"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="icon-linkedin"></i></a></li>
+				<li><a class="instagram" href="#"><i class="icon-instagram"></i></a></li>
+				<li><a class="gplus" href="#"><i class="icon-gplus"></i></a></li>
+              </ul>
+			  <div class="clearfix"></div>
+            </div>
+            <!-- Widget / End-->            
+			
+			<!-- Widget -->
+            <div class="widget utf-sidebar-widget-item">
+			  <div class="utf-detail-banner-add-section">
+				 <a href="#"><img src="images/banner-add-2.jpg" alt="banner-add-2"></a>
+			  </div>             
+            </div>
+            <!-- Widget / End-->
+            <div class="clearfix"></div>
+            <div class="margin-bottom-40"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Sidebar / End -->       
+    </div>
+
+</div>
